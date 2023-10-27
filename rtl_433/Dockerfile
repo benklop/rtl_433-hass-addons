@@ -1,6 +1,5 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:3.16
 FROM $BUILD_FROM as builder
-MAINTAINER pbkhrv@pm.me
 
 ENV LANG C.UTF-8
 
@@ -14,7 +13,7 @@ RUN apk add --no-cache --virtual .buildDeps \
 
 WORKDIR /build
 
-RUN git clone https://github.com/merbanan/rtl_433
+RUN git clone https://github.com/benklop/rtl_433
 WORKDIR ./rtl_433
 
 # Build a specific commit or tag.
